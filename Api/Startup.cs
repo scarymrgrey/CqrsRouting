@@ -27,7 +27,7 @@ namespace PogaWebApi
                 .AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton(_ => Configuration);
-            services.AddScoped<DbContext>(optionsAction => new BaseDbContext<User>(r => r.UseInMemoryDatabase()));
+            services.AddScoped<DbContext>(optionsAction => new BaseDbContext<User>(builder => builder.UseSqlServer(Configuration["ConnectionString"])));
             services.AddScoped<IEntityFrameworkSessionFactory, EntityFrameworkSessionFactory>();
             services.AddScoped<IUnitOfWorkFactory, EntityFrameworkUnitOfWorkFactory>();
             services.AddTransient<IDispatcher, DefaultDispatcher>();

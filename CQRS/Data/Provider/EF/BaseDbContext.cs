@@ -26,5 +26,4 @@ namespace Incoding.Data
             _optionsBuilderAction(optionsBuilder);
         }
     }
-  
 }

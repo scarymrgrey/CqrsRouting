@@ -7,3 +7,5 @@ C:\Users\Scary\source\repos\PogaWebApi\CQRS\obj\Debug\netcoreapp2.0\CQRS.Assembl
 C:\Users\Scary\source\repos\PogaWebApi\CQRS\obj\Debug\netcoreapp2.0\CQRS.AssemblyInfo.cs
 C:\Users\Scary\source\repos\PogaWebApi\CQRS\obj\Debug\netcoreapp2.0\CQRS.dll
 C:\Users\Scary\source\repos\PogaWebApi\CQRS\obj\Debug\netcoreapp2.0\CQRS.pdb
+C:\Users\Scary\source\repos\PogaWebApi\CQRS\bin\Debug\netcoreapp2.0\CQRS.runtimeconfig.json
+C:\Users\Scary\source\repos\PogaWebApi\CQRS\bin\Debug\netcoreapp2.0\CQRS.runtimeconfig.dev.json
