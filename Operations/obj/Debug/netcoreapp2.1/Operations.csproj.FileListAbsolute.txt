@@ -1,0 +1,12 @@
+C:\Users\Scary\source\repos\PogaWebApi\Operations\bin\Debug\netcoreapp2.1\Operations.deps.json
+C:\Users\Scary\source\repos\PogaWebApi\Operations\bin\Debug\netcoreapp2.1\Operations.dll
+C:\Users\Scary\source\repos\PogaWebApi\Operations\bin\Debug\netcoreapp2.1\Operations.pdb
+C:\Users\Scary\source\repos\PogaWebApi\Operations\bin\Debug\netcoreapp2.1\CQRS.dll
+C:\Users\Scary\source\repos\PogaWebApi\Operations\bin\Debug\netcoreapp2.1\CQRS.pdb
+C:\Users\Scary\source\repos\PogaWebApi\Operations\obj\Debug\netcoreapp2.1\Operations.csprojAssemblyReference.cache
+C:\Users\Scary\source\repos\PogaWebApi\Operations\obj\Debug\netcoreapp2.1\Operations.csproj.CoreCompileInputs.cache
+C:\Users\Scary\source\repos\PogaWebApi\Operations\obj\Debug\netcoreapp2.1\Operations.AssemblyInfoInputs.cache
+C:\Users\Scary\source\repos\PogaWebApi\Operations\obj\Debug\netcoreapp2.1\Operations.AssemblyInfo.cs
+C:\Users\Scary\source\repos\PogaWebApi\Operations\obj\Debug\netcoreapp2.1\Operations.csproj.CopyComplete
+C:\Users\Scary\source\repos\PogaWebApi\Operations\obj\Debug\netcoreapp2.1\Operations.dll
+C:\Users\Scary\source\repos\PogaWebApi\Operations\obj\Debug\netcoreapp2.1\Operations.pdb
