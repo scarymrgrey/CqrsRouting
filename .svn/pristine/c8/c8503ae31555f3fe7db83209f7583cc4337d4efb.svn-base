@@ -1,0 +1,15 @@
+﻿using Incoding.CQRS;
+
+namespace Operations.Queries
+{
+    /// <summary>
+    /// Просто демонстрация того как вызвать SP c параметрами и вернуть результат
+    /// </summary>
+    public class GetTestSpQuery : QueryBase<object[]>
+    {
+        protected override object[] ExecuteResult()
+        {
+            return Repository.ExecuteSp("SimpleTest",5);
+        }
+    }
+}

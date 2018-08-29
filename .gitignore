@@ -1,1 +1,8 @@
 .vs 
+.svn
+CQRS/bin
+CQRS/obj
+Operations/bin
+Operations/obj
+Api/obj
+Api/bin

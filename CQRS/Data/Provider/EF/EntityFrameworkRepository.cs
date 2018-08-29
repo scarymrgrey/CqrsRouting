@@ -1,9 +1,11 @@
-﻿namespace Incoding.Data
+﻿using System.Data;
+using System.Data.SqlClient;
+using Ninject.Infrastructure.Language;
+
+namespace Incoding.Data
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Incoding.Extensions;
     using Microsoft.EntityFrameworkCore;
     public class EntityFrameworkRepository : IRepository
     {
@@ -13,12 +15,29 @@
             this.session = session;
         }
 
-        public EntityFrameworkRepository() { }
-
-
         public void ExecuteSql(string sql)
         {
             session.Database.ExecuteSqlCommand(sql);
+        }
+
+        public object[] ExecuteSp(string storedProcedureName, params object[] parameters)
+        {
+            using (var connection = new SqlConnection(session.Database.GetDbConnection().ConnectionString))
+            using (var cmd = connection.CreateCommand())
+            {
+                cmd.CommandText = storedProcedureName;
+                cmd.CommandType = CommandType.StoredProcedure;
+                parameters.Map(r =>
+                {
+                    var par = cmd.CreateParameter();
+                    par.Value = r;
+                    cmd.Parameters.Add(par);
+                    par.ParameterName = null;
+                });
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                return parameters;
+            }
         }
 
         public TProvider GetProvider<TProvider>() where TProvider : class
@@ -58,7 +77,7 @@
             session.Set<TEntity>().Remove(entity);
         }
 
-     
+
 
         public TEntity GetById<TEntity>(int id) where TEntity : class, IEntity, new()
         {
@@ -81,7 +100,5 @@
         }
 
         public void Clear() { }
-
-
     }
 }

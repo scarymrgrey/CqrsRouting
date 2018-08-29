@@ -1,0 +1,16 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Operations.Queries;
+
+namespace PogaWebApi.Controllers
+{
+    public class AccountController : BaseController
+    { 
+      
+        [Route("signin")]
+        [HttpPost]
+        public IActionResult SignIn([FromBody] SignInQuery query)
+        {
+            return Ok(Dispatcher.Query(query));
+        }
+    }
+}

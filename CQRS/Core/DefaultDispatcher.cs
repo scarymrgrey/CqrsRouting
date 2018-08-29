@@ -9,15 +9,19 @@ namespace Incoding.CQRS
     using Incoding.Block.IoC;
     using Incoding.Data;
     using Incoding.Maybe;
+    using Microsoft.Extensions.Configuration;
 
 
     public class DefaultDispatcher : IDispatcher
     {
-        public DefaultDispatcher(IUnitOfWorkFactory _uowFactory)
+        private readonly IConfiguration _configuration;
+        private readonly UnitOfWorkCollection unitOfWorkCollection;
+        public DefaultDispatcher(IUnitOfWorkFactory _uowFactory,IConfiguration configuration)
         {
+            _configuration = configuration;
             unitOfWorkCollection = new UnitOfWorkCollection(_uowFactory);
         }
-        readonly UnitOfWorkCollection unitOfWorkCollection;
+        
 
 
         internal class UnitOfWorkCollection : Dictionary<MessageExecuteSetting, Lazy<IUnitOfWork>>, IDisposable
@@ -85,7 +89,7 @@ namespace Incoding.CQRS
                             part.Setting.IsOuter = true;
                         }
                         var unitOfWork = unitOfWorkCollection.AddOrGet(groupMessage.Key, isFlush);
-                        part.OnExecute(this, unitOfWork);
+                        part.OnExecute(this, unitOfWork, _configuration);
 
 
                         var isFlushInIteration = part is CommandBase;
@@ -107,6 +111,12 @@ namespace Incoding.CQRS
         {
             Push(new CommandComposite(message, executeSetting));
             return (TResult)message.Result;
+        }
+
+        public object Query(IMessage message, MessageExecuteSetting executeSetting = null)
+        {
+            Push(new CommandComposite(message, executeSetting));
+            return message.Result;
         }
     }
 }

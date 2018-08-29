@@ -6973,11 +6973,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Scary\\source\\repos\\PogaWebApi\\CQRS\\CQRS.csproj",
+      "projectUniqueName": "C:\\Users\\Scary\\source\\repos\\Api\\CQRS\\CQRS.csproj",
       "projectName": "CQRS",
-      "projectPath": "C:\\Users\\Scary\\source\\repos\\PogaWebApi\\CQRS\\CQRS.csproj",
+      "projectPath": "C:\\Users\\Scary\\source\\repos\\Api\\CQRS\\CQRS.csproj",
       "packagesPath": "C:\\Users\\Scary\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Scary\\source\\repos\\PogaWebApi\\CQRS\\obj\\",
+      "outputPath": "C:\\Users\\Scary\\source\\repos\\Api\\CQRS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

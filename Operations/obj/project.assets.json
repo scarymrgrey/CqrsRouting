@@ -6978,11 +6978,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Scary\\source\\repos\\PogaWebApi\\Operations\\Operations.csproj",
+      "projectUniqueName": "C:\\Users\\Scary\\source\\repos\\Api\\Operations\\Operations.csproj",
       "projectName": "Operations",
-      "projectPath": "C:\\Users\\Scary\\source\\repos\\PogaWebApi\\Operations\\Operations.csproj",
+      "projectPath": "C:\\Users\\Scary\\source\\repos\\Api\\Operations\\Operations.csproj",
       "packagesPath": "C:\\Users\\Scary\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Scary\\source\\repos\\PogaWebApi\\Operations\\obj\\",
+      "outputPath": "C:\\Users\\Scary\\source\\repos\\Api\\Operations\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7002,8 +7002,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Scary\\source\\repos\\PogaWebApi\\CQRS\\CQRS.csproj": {
-              "projectPath": "C:\\Users\\Scary\\source\\repos\\PogaWebApi\\CQRS\\CQRS.csproj"
+            "C:\\Users\\Scary\\source\\repos\\Api\\CQRS\\CQRS.csproj": {
+              "projectPath": "C:\\Users\\Scary\\source\\repos\\Api\\CQRS\\CQRS.csproj"
             }
           }
         }

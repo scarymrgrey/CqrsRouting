@@ -1,0 +1,9 @@
+﻿using System;
+
+namespace PogaWebApi.Exceptions
+{
+    public class InvalidParametersException : ApplicationException
+    {
+        
+    }
+}
