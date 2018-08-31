@@ -14,9 +14,9 @@ C:\Users\Scary\source\repos\Api\CQRS\bin\Debug\netcoreapp2.0\CQRS.runtimeconfig.
 C:\Users\Scary\source\repos\Api\CQRS\bin\Debug\netcoreapp2.0\CQRS.runtimeconfig.dev.json
 C:\Users\Scary\source\repos\Api\CQRS\bin\Debug\netcoreapp2.0\CQRS.dll
 C:\Users\Scary\source\repos\Api\CQRS\bin\Debug\netcoreapp2.0\CQRS.pdb
-C:\Users\Scary\source\repos\Api\CQRS\obj\Debug\netcoreapp2.0\CQRS.csprojAssemblyReference.cache
 C:\Users\Scary\source\repos\Api\CQRS\obj\Debug\netcoreapp2.0\CQRS.csproj.CoreCompileInputs.cache
 C:\Users\Scary\source\repos\Api\CQRS\obj\Debug\netcoreapp2.0\CQRS.AssemblyInfoInputs.cache
 C:\Users\Scary\source\repos\Api\CQRS\obj\Debug\netcoreapp2.0\CQRS.AssemblyInfo.cs
 C:\Users\Scary\source\repos\Api\CQRS\obj\Debug\netcoreapp2.0\CQRS.dll
 C:\Users\Scary\source\repos\Api\CQRS\obj\Debug\netcoreapp2.0\CQRS.pdb
+C:\Users\Scary\source\repos\Api\CQRS\obj\Debug\netcoreapp2.0\CQRS.csprojAssemblyReference.cache

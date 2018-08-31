@@ -5,11 +5,10 @@ namespace Operations.Queries
 {
     public class GetUserByIdQuery : QueryBase<User>
     {
+        public int UserId { get; set; }
         protected override User ExecuteResult()
         {
-            throw new System.NotImplementedException();
+            return Repository.GetById<User>(UserId);
         }
-
-        public int Id { get; set; }
     }
 }

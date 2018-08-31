@@ -13,6 +13,5 @@ namespace Incoding.CQRS
     {
         void Push(CommandComposite composite);
         TResult Query<TResult>(QueryBase<TResult> message, MessageExecuteSetting executeSetting = null);
-        object Query(IMessage message, MessageExecuteSetting executeSetting = null);
     }
 }

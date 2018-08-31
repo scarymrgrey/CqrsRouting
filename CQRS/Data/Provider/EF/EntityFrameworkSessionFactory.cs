@@ -1,6 +1,5 @@
 ﻿namespace Incoding.Data
 {
-    using System;
     using Microsoft.EntityFrameworkCore;
 
     public class EntityFrameworkSessionFactory : IEntityFrameworkSessionFactory

@@ -1,3 +1,6 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace Incoding.Data
 {
     #region << Using >>
@@ -10,7 +13,17 @@ namespace Incoding.Data
 
     public abstract class EntityBase : IEntity
     {
-        public int Id { get; protected set; }
+        public DateTime? DateCreate { get; set; }
+
+        public DateTime? DateModify { get; set; }
+
+        public EntityBase()
+        {
+            DateCreate = DateTime.Now;
+            DateModify = DateTime.Now;
+        }
+        [Key]
+        public virtual int Id { get; set; }
 
         public override int GetHashCode()
         {

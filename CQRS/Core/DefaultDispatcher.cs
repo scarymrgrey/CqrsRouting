@@ -112,11 +112,5 @@ namespace Incoding.CQRS
             Push(new CommandComposite(message, executeSetting));
             return (TResult)message.Result;
         }
-
-        public object Query(IMessage message, MessageExecuteSetting executeSetting = null)
-        {
-            Push(new CommandComposite(message, executeSetting));
-            return message.Result;
-        }
     }
 }

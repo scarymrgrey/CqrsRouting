@@ -7,6 +7,13 @@
     <StartupObject />
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.1\netcoreapp2.1\Operations.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591;</NoWarn>
+    <OutputPath>bin\Debug\netcoreapp2.1\</OutputPath>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\CQRS\CQRS.csproj" />
   </ItemGroup>

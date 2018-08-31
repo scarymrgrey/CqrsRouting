@@ -11,6 +11,24 @@
           "lib/net45/DryIoc.dll": {}
         }
       },
+      "Elasticsearch.Net/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0",
+          "NETStandard.Library": "1.6.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Runtime.Serialization.Primitives": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Elasticsearch.Net.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Elasticsearch.Net.dll": {}
+        }
+      },
       "EnyimMemcached/2.13.0": {
         "type": "package",
         "compile": {
@@ -18,6 +36,21 @@
         },
         "runtime": {
           "lib/net35/Enyim.Caching.dll": {}
+        }
+      },
+      "FluentValidation/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Concurrent": "4.3.0",
+          "System.ComponentModel.Annotations": "4.4.1",
+          "System.ComponentModel.Primitives": "4.3.0",
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
         }
       },
       "FluentValidation-Signed/5.0.0.1": {
@@ -62,6 +95,19 @@
           "lib/Net40/tr/FluentValidation.resources.dll": {
             "locale": "tr"
           }
+        }
+      },
+      "FluentValidation.AspNetCore/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "8.0.0",
+          "Microsoft.AspNetCore.Mvc": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.AspNetCore.dll": {}
         }
       },
       "FluentValidation.MVC3-Signed/5.0.0.3": {
@@ -2806,115 +2852,6 @@
           "lib/net45-full/Ninject.dll": {}
         }
       },
-      "NJsonSchema/9.10.70": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "9.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.0/NJsonSchema.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/NJsonSchema.dll": {}
-        }
-      },
-      "NSwag.Annotations/11.18.7": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "9.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.0/NSwag.Annotations.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/NSwag.Annotations.dll": {}
-        }
-      },
-      "NSwag.AspNetCore/11.18.7": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.Mvc.Core": "1.0.3",
-          "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.3",
-          "Microsoft.AspNetCore.StaticFiles": "1.0.2",
-          "Microsoft.Extensions.FileProviders.Embedded": "1.0.1",
-          "NETStandard.Library": "1.6.1",
-          "NSwag.Annotations": "11.18.7",
-          "NSwag.Core": "11.18.7",
-          "NSwag.SwaggerGeneration": "11.18.7",
-          "NSwag.SwaggerGeneration.AspNetCore": "11.18.7",
-          "NSwag.SwaggerGeneration.WebApi": "11.18.7",
-          "System.IO.FileSystem": "4.3.0",
-          "System.Xml.XPath.XDocument": "4.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.6/NSwag.AspNetCore.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.6/NSwag.AspNetCore.dll": {}
-        }
-      },
-      "NSwag.Core/11.18.7": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "NJsonSchema": "9.10.70",
-          "Newtonsoft.Json": "9.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.0/NSwag.Core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/NSwag.Core.dll": {}
-        }
-      },
-      "NSwag.SwaggerGeneration/11.18.7": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "NJsonSchema": "9.10.70",
-          "NSwag.Core": "11.18.7",
-          "Newtonsoft.Json": "9.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.0/NSwag.SwaggerGeneration.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/NSwag.SwaggerGeneration.dll": {}
-        }
-      },
-      "NSwag.SwaggerGeneration.AspNetCore/11.18.7": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.Mvc.ApiExplorer": "1.0.3",
-          "Microsoft.AspNetCore.Mvc.Core": "1.0.3",
-          "NETStandard.Library": "1.6.1",
-          "NJsonSchema": "9.10.70",
-          "NSwag.SwaggerGeneration": "11.18.7"
-        },
-        "compile": {
-          "lib/netstandard1.6/NSwag.SwaggerGeneration.AspNetCore.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.6/NSwag.SwaggerGeneration.AspNetCore.dll": {}
-        }
-      },
-      "NSwag.SwaggerGeneration.WebApi/11.18.7": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "NJsonSchema": "9.10.70",
-          "NSwag.SwaggerGeneration": "11.18.7",
-          "Newtonsoft.Json": "9.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.0/NSwag.SwaggerGeneration.WebApi.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/NSwag.SwaggerGeneration.WebApi.dll": {}
-        }
-      },
       "RavenDB.Client/2.5.2971": {
         "type": "package",
         "dependencies": {
@@ -3169,6 +3106,112 @@
           }
         }
       },
+      "Serilog/2.7.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.Collections.NonGeneric": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        }
+      },
+      "Serilog.Extensions.Logging/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "2.0.0",
+          "Serilog": "2.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Serilog.Extensions.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Serilog.Extensions.Logging.dll": {}
+        }
+      },
+      "Serilog.Settings.Configuration/2.6.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
+          "Microsoft.Extensions.DependencyModel": "1.0.0",
+          "Serilog": "2.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/Serilog.Settings.Configuration.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Serilog.Settings.Configuration.dll": {}
+        }
+      },
+      "Serilog.Sinks.Elasticsearch/6.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Elasticsearch.Net": "6.0.0",
+          "NETStandard.Library": "1.6.0",
+          "Serilog": "2.6.0",
+          "Serilog.Sinks.File": "4.0.0",
+          "Serilog.Sinks.PeriodicBatching": "2.1.1",
+          "Serilog.Sinks.RollingFile": "3.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.Elasticsearch.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.Elasticsearch.dll": {}
+        }
+      },
+      "Serilog.Sinks.File/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.5.0",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Threading": "4.0.11",
+          "System.Threading.Timer": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.File.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.File.dll": {}
+        }
+      },
+      "Serilog.Sinks.PeriodicBatching/2.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.0.0",
+          "System.Collections.Concurrent": "4.0.12",
+          "System.Threading.Timer": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.2/Serilog.Sinks.PeriodicBatching.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.2/Serilog.Sinks.PeriodicBatching.dll": {}
+        }
+      },
+      "Serilog.Sinks.RollingFile/3.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Serilog.Sinks.File": "3.2.0",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Text.Encoding.Extensions": "4.0.11"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {}
+        }
+      },
       "SimpleInjector/3.1.2": {
         "type": "package",
         "compile": {
@@ -3289,6 +3332,68 @@
           "lib/netstandard1.5/StructureMap.dll": {}
         }
       },
+      "Swashbuckle.AspNetCore/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Swashbuckle.AspNetCore.Swagger": "3.0.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "3.0.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.4",
+          "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.4",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.ApiExplorer": "1.0.4",
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.4",
+          "Microsoft.AspNetCore.Mvc.DataAnnotations": "1.0.4",
+          "NETStandard.Library": "1.6.1",
+          "Swashbuckle.AspNetCore.Swagger": "3.0.0",
+          "System.Xml.XPath": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Routing": "1.0.4",
+          "Microsoft.AspNetCore.StaticFiles": "1.0.4",
+          "Microsoft.Extensions.FileProviders.Embedded": "1.0.1",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3362,7 +3467,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Collections.NonGeneric.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
@@ -3386,6 +3491,18 @@
           "lib/netstandard1.3/System.Collections.Specialized.dll": {}
         }
       },
+      "System.ComponentModel/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.ComponentModel.dll": {}
+        }
+      },
       "System.ComponentModel.Annotations/4.5.0": {
         "type": "package",
         "compile": {
@@ -3393,6 +3510,46 @@
         },
         "runtime": {
           "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "System.ComponentModel.Primitives/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        }
+      },
+      "System.ComponentModel.TypeConverter/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Collections.NonGeneric": "4.3.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel": "4.3.0",
+          "System.ComponentModel.Primitives": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.5/System.ComponentModel.TypeConverter.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/System.ComponentModel.TypeConverter.dll": {}
         }
       },
       "System.Console/4.3.0": {
@@ -4619,18 +4776,24 @@
           "lib/netstandard1.3/System.Threading.Thread.dll": {}
         }
       },
-      "System.ValueTuple/4.3.0": {
+      "System.Threading.Timer/4.0.1": {
         "type": "package",
         "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0"
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Runtime": "4.1.0"
         },
         "compile": {
-          "lib/netstandard1.0/System.ValueTuple.dll": {}
+          "ref/netstandard1.2/System.Threading.Timer.dll": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard1.0/System.ValueTuple.dll": {}
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "System.Xml.ReaderWriter/4.3.0": {
@@ -4765,7 +4928,7 @@
           "System.Xml.XPath": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
@@ -4844,6 +5007,21 @@
         "tools/SignPackageAssemblies.ps1"
       ]
     },
+    "Elasticsearch.Net/6.0.0": {
+      "sha512": "z98PpOqlLQ9nJPTyFgBdXSrFu9ywgZhPpmqDUyvJgCd2x1lzD0wKz+2gL1ETZpLsTJokFfJCW7JyOxSwPtFeuQ==",
+      "type": "package",
+      "path": "elasticsearch.net/6.0.0",
+      "files": [
+        "elasticsearch.net.6.0.0.nupkg.sha512",
+        "elasticsearch.net.nuspec",
+        "lib/net45/Elasticsearch.Net.dll",
+        "lib/net45/Elasticsearch.Net.xml",
+        "lib/net46/Elasticsearch.Net.dll",
+        "lib/net46/Elasticsearch.Net.xml",
+        "lib/netstandard1.3/Elasticsearch.Net.dll",
+        "lib/netstandard1.3/Elasticsearch.Net.xml"
+      ]
+    },
     "EnyimMemcached/2.13.0": {
       "sha512": "lP6ndOX9gU4yk1xMGbOtQfso+GNmbj9tENc7votI0ETYJxBho+P5p9vwP4CpPWTSlB6khJume7raR/FnZDpbKg==",
       "type": "package",
@@ -4854,6 +5032,24 @@
         "lib/net35/Enyim.Caching.dll",
         "lib/net35/Enyim.Caching.pdb",
         "lib/net35/Enyim.Caching.xml"
+      ]
+    },
+    "FluentValidation/8.0.0": {
+      "sha512": "Z63O9uqIVE8c4hJNCUv0plWLQmMuIvKhfnm6MfiCqSX+u0q0DHki3BFvhJlRNJXtI5w9xFgNvtsgiuTjbp+VFA==",
+      "type": "package",
+      "path": "fluentvalidation/8.0.0",
+      "files": [
+        ".signature.p7s",
+        "fluentvalidation.8.0.0.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net45/FluentValidation.dll",
+        "lib/net45/FluentValidation.xml",
+        "lib/netstandard1.1/FluentValidation.dll",
+        "lib/netstandard1.1/FluentValidation.xml",
+        "lib/netstandard1.6/FluentValidation.dll",
+        "lib/netstandard1.6/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml"
       ]
     },
     "FluentValidation-Signed/5.0.0.1": {
@@ -4889,6 +5085,18 @@
         "lib/portable-win+net40+sl50+wp80/pt/FluentValidation.resources.dll",
         "lib/portable-win+net40+sl50+wp80/ru/FluentValidation.resources.dll",
         "lib/portable-win+net40+sl50+wp80/sv/FluentValidation.resources.dll"
+      ]
+    },
+    "FluentValidation.AspNetCore/8.0.0": {
+      "sha512": "F13GxpYqt1IKEdyHerI2bDm+W3dXyCwciISgyB36Vy58GFXPSs9E0x6jeeT/WvGVbnV2WSsMTx+2pbk/yMPNgw==",
+      "type": "package",
+      "path": "fluentvalidation.aspnetcore/8.0.0",
+      "files": [
+        ".signature.p7s",
+        "fluentvalidation.aspnetcore.8.0.0.nupkg.sha512",
+        "fluentvalidation.aspnetcore.nuspec",
+        "lib/netstandard2.0/FluentValidation.AspNetCore.dll",
+        "lib/netstandard2.0/FluentValidation.AspNetCore.xml"
       ]
     },
     "FluentValidation.MVC3-Signed/5.0.0.3": {
@@ -7639,106 +7847,6 @@
         "ninject.nuspec"
       ]
     },
-    "NJsonSchema/9.10.70": {
-      "sha512": "yQCbBtrd8QYM9Y80t2nzEvK8YsaNKjGcqSjBj94JXZVX3mf5zTUfzYI4okCeI8hnVp4J4JU1+lwzbkTF16bWrg==",
-      "type": "package",
-      "path": "njsonschema/9.10.70",
-      "files": [
-        ".signature.p7s",
-        "lib/net40/NJsonSchema.dll",
-        "lib/net40/NJsonSchema.xml",
-        "lib/net45/NJsonSchema.dll",
-        "lib/net45/NJsonSchema.xml",
-        "lib/netstandard1.0/NJsonSchema.dll",
-        "lib/netstandard1.0/NJsonSchema.xml",
-        "njsonschema.9.10.70.nupkg.sha512",
-        "njsonschema.nuspec"
-      ]
-    },
-    "NSwag.Annotations/11.18.7": {
-      "sha512": "nRD4fc3qgOQKODTK4gx9L9ysmeFlLbmX6SavrHRF/IsfDhM40XAhzIE+JcR0sV/KD5gCEIUgazn0rdHXpbLCcQ==",
-      "type": "package",
-      "path": "nswag.annotations/11.18.7",
-      "files": [
-        ".signature.p7s",
-        "lib/net45/NSwag.Annotations.dll",
-        "lib/net45/NSwag.Annotations.xml",
-        "lib/netstandard1.0/NSwag.Annotations.dll",
-        "lib/netstandard1.0/NSwag.Annotations.xml",
-        "nswag.annotations.11.18.7.nupkg.sha512",
-        "nswag.annotations.nuspec"
-      ]
-    },
-    "NSwag.AspNetCore/11.18.7": {
-      "sha512": "s0WR0Sj6m5zE0basqEvqWWMK1f2fNS5Cnp0aA/791mVr+QEsKSvqdfcmQ9slKvK/6TCWSxKs1KCfNoIfwgDocg==",
-      "type": "package",
-      "path": "nswag.aspnetcore/11.18.7",
-      "files": [
-        ".signature.p7s",
-        "lib/net451/NSwag.AspNetCore.dll",
-        "lib/net451/NSwag.AspNetCore.xml",
-        "lib/netstandard1.6/NSwag.AspNetCore.dll",
-        "lib/netstandard1.6/NSwag.AspNetCore.xml",
-        "nswag.aspnetcore.11.18.7.nupkg.sha512",
-        "nswag.aspnetcore.nuspec"
-      ]
-    },
-    "NSwag.Core/11.18.7": {
-      "sha512": "YelYmQw6z9YTPST9bkSU+a/ChCPseOC+VvHj+heDNTnsuQgXCLgU1s/cxw2gwTc3lef/ZjyAMhI2xyQBkTWz7g==",
-      "type": "package",
-      "path": "nswag.core/11.18.7",
-      "files": [
-        ".signature.p7s",
-        "lib/net45/NSwag.Core.dll",
-        "lib/net45/NSwag.Core.xml",
-        "lib/netstandard1.0/NSwag.Core.dll",
-        "lib/netstandard1.0/NSwag.Core.xml",
-        "nswag.core.11.18.7.nupkg.sha512",
-        "nswag.core.nuspec"
-      ]
-    },
-    "NSwag.SwaggerGeneration/11.18.7": {
-      "sha512": "WC6SiosXJbJw0mRpUDGa87ZhYZV2JMWQjCNItbF3Mbt1jv8M5DjFgTsgS4EiS6vJJoG7ex4iLyejR5i2U+zdLQ==",
-      "type": "package",
-      "path": "nswag.swaggergeneration/11.18.7",
-      "files": [
-        ".signature.p7s",
-        "lib/net45/NSwag.SwaggerGeneration.dll",
-        "lib/net45/NSwag.SwaggerGeneration.xml",
-        "lib/netstandard1.0/NSwag.SwaggerGeneration.dll",
-        "lib/netstandard1.0/NSwag.SwaggerGeneration.xml",
-        "nswag.swaggergeneration.11.18.7.nupkg.sha512",
-        "nswag.swaggergeneration.nuspec"
-      ]
-    },
-    "NSwag.SwaggerGeneration.AspNetCore/11.18.7": {
-      "sha512": "wLliMqNhZ5rs0UwSgUcQLzgzr3JARpw/g54yWz+9PYbWZkExDcAe8RF2qaTaukuSYwT1t4BhEUb81uRObVoKMw==",
-      "type": "package",
-      "path": "nswag.swaggergeneration.aspnetcore/11.18.7",
-      "files": [
-        ".signature.p7s",
-        "lib/net451/NSwag.SwaggerGeneration.AspNetCore.dll",
-        "lib/net451/NSwag.SwaggerGeneration.AspNetCore.xml",
-        "lib/netstandard1.6/NSwag.SwaggerGeneration.AspNetCore.dll",
-        "lib/netstandard1.6/NSwag.SwaggerGeneration.AspNetCore.xml",
-        "nswag.swaggergeneration.aspnetcore.11.18.7.nupkg.sha512",
-        "nswag.swaggergeneration.aspnetcore.nuspec"
-      ]
-    },
-    "NSwag.SwaggerGeneration.WebApi/11.18.7": {
-      "sha512": "GUZiJ4YlwzPJRElUfDgXv6eW3VGTUr4fzRuy3OO+pYh5edVnxgCa0eleb5beeJO05axyVsO6LynPVjge5404tQ==",
-      "type": "package",
-      "path": "nswag.swaggergeneration.webapi/11.18.7",
-      "files": [
-        ".signature.p7s",
-        "lib/net45/NSwag.SwaggerGeneration.WebApi.dll",
-        "lib/net45/NSwag.SwaggerGeneration.WebApi.xml",
-        "lib/netstandard1.0/NSwag.SwaggerGeneration.WebApi.dll",
-        "lib/netstandard1.0/NSwag.SwaggerGeneration.WebApi.xml",
-        "nswag.swaggergeneration.webapi.11.18.7.nupkg.sha512",
-        "nswag.swaggergeneration.webapi.nuspec"
-      ]
-    },
     "RavenDB.Client/2.5.2971": {
       "sha512": "yzJJLYjGsfYLBnSTFvo7rjkXA8dnuQEDH5UitekC6CXPDUO5OTmTJc9ouZ6+pQf9uc/6QKgxqqyQbdh0Pfaokg==",
       "type": "package",
@@ -8044,6 +8152,113 @@
         "version.txt"
       ]
     },
+    "Serilog/2.7.1": {
+      "sha512": "5eS6AD4hesOYvlwYqjntLaOonDnEiY22QiMUKueJHPrm5vm1k4tzXgOgCb2mJoMnj6l5Wt6AXV5liXzXymvarg==",
+      "type": "package",
+      "path": "serilog/2.7.1",
+      "files": [
+        "lib/net45/Serilog.dll",
+        "lib/net45/Serilog.pdb",
+        "lib/net45/Serilog.xml",
+        "lib/net46/Serilog.dll",
+        "lib/net46/Serilog.pdb",
+        "lib/net46/Serilog.xml",
+        "lib/netstandard1.0/Serilog.dll",
+        "lib/netstandard1.0/Serilog.pdb",
+        "lib/netstandard1.0/Serilog.xml",
+        "lib/netstandard1.3/Serilog.dll",
+        "lib/netstandard1.3/Serilog.pdb",
+        "lib/netstandard1.3/Serilog.xml",
+        "serilog.2.7.1.nupkg.sha512",
+        "serilog.nuspec"
+      ]
+    },
+    "Serilog.Extensions.Logging/2.0.2": {
+      "sha512": "PYAkzUn/VV16Es7U06BfEhNZEltnYWu0WFCM4d2lLY/dvlA7xMwFXBuGRxR0XvEBPoOxPorjhFLy9txwiMO6rg==",
+      "type": "package",
+      "path": "serilog.extensions.logging/2.0.2",
+      "files": [
+        "lib/net45/Serilog.Extensions.Logging.dll",
+        "lib/net45/Serilog.Extensions.Logging.xml",
+        "lib/net46/Serilog.Extensions.Logging.dll",
+        "lib/net46/Serilog.Extensions.Logging.xml",
+        "lib/net461/Serilog.Extensions.Logging.dll",
+        "lib/net461/Serilog.Extensions.Logging.xml",
+        "lib/netstandard1.3/Serilog.Extensions.Logging.dll",
+        "lib/netstandard1.3/Serilog.Extensions.Logging.xml",
+        "lib/netstandard2.0/Serilog.Extensions.Logging.dll",
+        "lib/netstandard2.0/Serilog.Extensions.Logging.xml",
+        "serilog.extensions.logging.2.0.2.nupkg.sha512",
+        "serilog.extensions.logging.nuspec"
+      ]
+    },
+    "Serilog.Settings.Configuration/2.6.1": {
+      "sha512": "d23bkPRrI/lxfe3FQ2C1KouU/3tBDhGhIHvmlW94rDeNductsu6wzEOGTI9neImD3AwzCB/WPq2BJCZAWe2R4Q==",
+      "type": "package",
+      "path": "serilog.settings.configuration/2.6.1",
+      "files": [
+        "lib/net451/Serilog.Settings.Configuration.dll",
+        "lib/net451/Serilog.Settings.Configuration.xml",
+        "lib/netstandard1.6/Serilog.Settings.Configuration.dll",
+        "lib/netstandard1.6/Serilog.Settings.Configuration.xml",
+        "serilog.settings.configuration.2.6.1.nupkg.sha512",
+        "serilog.settings.configuration.nuspec"
+      ]
+    },
+    "Serilog.Sinks.Elasticsearch/6.5.0": {
+      "sha512": "ETYHl2bu5VAjmehfbLKhgfB5VYWQN3czA6pO1pWBmnzUQR94tofhvW0Cn76tYfPjE6Q5vCWGdMc/e0pQjCKJKA==",
+      "type": "package",
+      "path": "serilog.sinks.elasticsearch/6.5.0",
+      "files": [
+        "lib/net45/Serilog.Sinks.Elasticsearch.dll",
+        "lib/net45/Serilog.Sinks.Elasticsearch.xml",
+        "lib/netstandard1.3/Serilog.Sinks.Elasticsearch.dll",
+        "lib/netstandard1.3/Serilog.Sinks.Elasticsearch.xml",
+        "serilog.sinks.elasticsearch.6.5.0.nupkg.sha512",
+        "serilog.sinks.elasticsearch.nuspec"
+      ]
+    },
+    "Serilog.Sinks.File/4.0.0": {
+      "sha512": "vBj43RkAbeP1dzoPFR2+LfV5GevDRPDq6265JJBv223lMvT9rfdwe/S/I9ow7aZSLYKfw4qPDw6NW8YwjbDbvg==",
+      "type": "package",
+      "path": "serilog.sinks.file/4.0.0",
+      "files": [
+        "lib/net45/Serilog.Sinks.File.dll",
+        "lib/net45/Serilog.Sinks.File.xml",
+        "lib/netstandard1.3/Serilog.Sinks.File.dll",
+        "lib/netstandard1.3/Serilog.Sinks.File.xml",
+        "serilog.sinks.file.4.0.0.nupkg.sha512",
+        "serilog.sinks.file.nuspec"
+      ]
+    },
+    "Serilog.Sinks.PeriodicBatching/2.1.1": {
+      "sha512": "L1iZtcEzQdEIYCPvhYJYB2RofPg+i1NhHJfS+DpXLyLSMS6OXebqaI1fxWhmJRIjD9D9BuXi23FkZTQDiP7cHw==",
+      "type": "package",
+      "path": "serilog.sinks.periodicbatching/2.1.1",
+      "files": [
+        "lib/net45/Serilog.Sinks.PeriodicBatching.dll",
+        "lib/net45/Serilog.Sinks.PeriodicBatching.xml",
+        "lib/netstandard1.1/Serilog.Sinks.PeriodicBatching.dll",
+        "lib/netstandard1.1/Serilog.Sinks.PeriodicBatching.xml",
+        "lib/netstandard1.2/Serilog.Sinks.PeriodicBatching.dll",
+        "lib/netstandard1.2/Serilog.Sinks.PeriodicBatching.xml",
+        "serilog.sinks.periodicbatching.2.1.1.nupkg.sha512",
+        "serilog.sinks.periodicbatching.nuspec"
+      ]
+    },
+    "Serilog.Sinks.RollingFile/3.3.0": {
+      "sha512": "2lT5X1r3GH4P0bRWJfhA7etGl8Q2Ipw9AACvtAHWRUSpYZ42NGVyHoVs2ALBZ/cAkkS+tA4jl80Zie144eLQPg==",
+      "type": "package",
+      "path": "serilog.sinks.rollingfile/3.3.0",
+      "files": [
+        "lib/net45/Serilog.Sinks.RollingFile.dll",
+        "lib/net45/Serilog.Sinks.RollingFile.xml",
+        "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll",
+        "lib/netstandard1.3/Serilog.Sinks.RollingFile.xml",
+        "serilog.sinks.rollingfile.3.3.0.nupkg.sha512",
+        "serilog.sinks.rollingfile.nuspec"
+      ]
+    },
     "SimpleInjector/3.1.2": {
       "sha512": "nJVFKygDGBMaubMThDmrxGIdhTTYsYq1A+qRTroR+l8EpwKIbQ0Iv/8BZ3TdKbVJb5x1hD8EjZlRyfCWZZIzmg==",
       "type": "package",
@@ -8194,6 +8409,56 @@
         "lib/netstandard1.5/StructureMap.dll",
         "structuremap.4.4.2.nupkg.sha512",
         "structuremap.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore/3.0.0": {
+      "sha512": "aM17YeBlYLIftD+4xCUPw/yT+FLjCyOCFinikXj42hntFYkkAuTRGLm9x+t7kfC13/OBiMJ1XEjl3MGeknx1cw==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore/3.0.0",
+      "files": [
+        "lib/net451/Swashbuckle.AspNetCore.dll",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.dll",
+        "swashbuckle.aspnetcore.3.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.Swagger/3.0.0": {
+      "sha512": "smrewcRU7HK+3WRZWNYFXVAqD1apyIEwcYEdzVu23tNJek8GQM1V8yqIlj41D8CbYoqaeF+fDhkUDY6FSXUDuw==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swagger/3.0.0",
+      "files": [
+        "lib/net451/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/net451/Swashbuckle.AspNetCore.Swagger.xml",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.xml",
+        "swashbuckle.aspnetcore.swagger.3.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swagger.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/3.0.0": {
+      "sha512": "DjGV/s6dUi+Xg4ofc2/TCDJlFhGAstvStCBAJ8F2mllIRAtf+s0HsfAIPmFy+W0gOzo1/voRtMKU1uvINZtDFw==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swaggergen/3.0.0",
+      "files": [
+        "lib/net451/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/net451/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "swashbuckle.aspnetcore.swaggergen.3.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggergen.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/3.0.0": {
+      "sha512": "Gg3rELfq7qJOx8d4xO6hvqSdhMk9ofQCdtLVjBAAVyKehkJRCqiXUO+hJ+/GeEngkaLEglaK/+6an4gC/AxOlg==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swaggerui/3.0.0",
+      "files": [
+        "lib/net451/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/net451/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "swashbuckle.aspnetcore.swaggerui.3.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -8505,6 +8770,63 @@
         "system.collections.specialized.nuspec"
       ]
     },
+    "System.ComponentModel/4.3.0": {
+      "sha512": "VyGn1jGRZVfxnh8EdvDCi71v3bMXrsu8aYJOwoV7SNDLVhiEqwP86pPMyRGsDsxhXAm2b3o9OIqeETfN5qfezw==",
+      "type": "package",
+      "path": "system.componentmodel/4.3.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.ComponentModel.dll",
+        "lib/netstandard1.3/System.ComponentModel.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/System.ComponentModel.dll",
+        "ref/netcore50/System.ComponentModel.xml",
+        "ref/netcore50/de/System.ComponentModel.xml",
+        "ref/netcore50/es/System.ComponentModel.xml",
+        "ref/netcore50/fr/System.ComponentModel.xml",
+        "ref/netcore50/it/System.ComponentModel.xml",
+        "ref/netcore50/ja/System.ComponentModel.xml",
+        "ref/netcore50/ko/System.ComponentModel.xml",
+        "ref/netcore50/ru/System.ComponentModel.xml",
+        "ref/netcore50/zh-hans/System.ComponentModel.xml",
+        "ref/netcore50/zh-hant/System.ComponentModel.xml",
+        "ref/netstandard1.0/System.ComponentModel.dll",
+        "ref/netstandard1.0/System.ComponentModel.xml",
+        "ref/netstandard1.0/de/System.ComponentModel.xml",
+        "ref/netstandard1.0/es/System.ComponentModel.xml",
+        "ref/netstandard1.0/fr/System.ComponentModel.xml",
+        "ref/netstandard1.0/it/System.ComponentModel.xml",
+        "ref/netstandard1.0/ja/System.ComponentModel.xml",
+        "ref/netstandard1.0/ko/System.ComponentModel.xml",
+        "ref/netstandard1.0/ru/System.ComponentModel.xml",
+        "ref/netstandard1.0/zh-hans/System.ComponentModel.xml",
+        "ref/netstandard1.0/zh-hant/System.ComponentModel.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.4.3.0.nupkg.sha512",
+        "system.componentmodel.nuspec"
+      ]
+    },
     "System.ComponentModel.Annotations/4.5.0": {
       "sha512": "IjDa643EO77A4CL9dhxfZ6zzGu+pM8Ar0NYPRMN3TvDiga4uGDzFHOj/ArpyNxxKyO5IFT2LZ0rK3kUog7g3jA==",
       "type": "package",
@@ -8591,6 +8913,94 @@
         "system.componentmodel.annotations.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "System.ComponentModel.Primitives/4.3.0": {
+      "sha512": "j8GUkCpM8V4d4vhLIIoBLGey2Z5bCkMVNjEZseyAlm4n5arcsJOeI3zkUP+zvZgzsbLTYh4lYeP/ZD/gdIAPrw==",
+      "type": "package",
+      "path": "system.componentmodel.primitives/4.3.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/System.ComponentModel.Primitives.dll",
+        "lib/netstandard1.0/System.ComponentModel.Primitives.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/System.ComponentModel.Primitives.dll",
+        "ref/netstandard1.0/System.ComponentModel.Primitives.dll",
+        "ref/netstandard1.0/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/de/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/es/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/fr/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/it/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/ja/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/ko/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/ru/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/zh-hans/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/zh-hant/System.ComponentModel.Primitives.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.primitives.4.3.0.nupkg.sha512",
+        "system.componentmodel.primitives.nuspec"
+      ]
+    },
+    "System.ComponentModel.TypeConverter/4.3.0": {
+      "sha512": "16pQ6P+EdhcXzPiEK4kbA953Fu0MNG2ovxTZU81/qsCd1zPRsKc3uif5NgvllCY598k6bI0KUyKW8fanlfaDQg==",
+      "type": "package",
+      "path": "system.componentmodel.typeconverter/4.3.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/System.ComponentModel.TypeConverter.dll",
+        "lib/net462/System.ComponentModel.TypeConverter.dll",
+        "lib/netstandard1.0/System.ComponentModel.TypeConverter.dll",
+        "lib/netstandard1.5/System.ComponentModel.TypeConverter.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/System.ComponentModel.TypeConverter.dll",
+        "ref/net462/System.ComponentModel.TypeConverter.dll",
+        "ref/netstandard1.0/System.ComponentModel.TypeConverter.dll",
+        "ref/netstandard1.0/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/de/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/es/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/fr/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/it/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/ja/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/ko/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/ru/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/zh-hans/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/zh-hant/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/System.ComponentModel.TypeConverter.dll",
+        "ref/netstandard1.5/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/de/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/es/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/fr/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/it/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/ja/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/ko/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/ru/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/zh-hans/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/zh-hant/System.ComponentModel.TypeConverter.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.typeconverter.4.3.0.nupkg.sha512",
+        "system.componentmodel.typeconverter.nuspec"
       ]
     },
     "System.Console/4.3.0": {
@@ -12178,19 +12588,100 @@
         "system.threading.thread.nuspec"
       ]
     },
-    "System.ValueTuple/4.3.0": {
-      "sha512": "cNLEvBX3d6MMQRZe3SMFNukVbitDAEpVZO17qa0/2FHxZ7Y7PpFRpr6m2615XYM/tYYYf0B+WyHNujqIw8Luwg==",
+    "System.Threading.Timer/4.0.1": {
+      "sha512": "saGfUV8uqVW6LeURiqxcGhZ24PzuRNaUBtbhVeuUAvky1naH395A/1nY0P2bWvrw/BreRtIB/EzTDkGBpqCwEw==",
       "type": "package",
-      "path": "system.valuetuple/4.3.0",
+      "path": "system.threading.timer/4.0.1",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
-        "lib/netstandard1.0/.xml",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net451/_._",
+        "lib/portable-net451+win81+wpa81/_._",
+        "lib/win81/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net451/_._",
+        "ref/netcore50/System.Threading.Timer.dll",
+        "ref/netcore50/System.Threading.Timer.xml",
+        "ref/netcore50/de/System.Threading.Timer.xml",
+        "ref/netcore50/es/System.Threading.Timer.xml",
+        "ref/netcore50/fr/System.Threading.Timer.xml",
+        "ref/netcore50/it/System.Threading.Timer.xml",
+        "ref/netcore50/ja/System.Threading.Timer.xml",
+        "ref/netcore50/ko/System.Threading.Timer.xml",
+        "ref/netcore50/ru/System.Threading.Timer.xml",
+        "ref/netcore50/zh-hans/System.Threading.Timer.xml",
+        "ref/netcore50/zh-hant/System.Threading.Timer.xml",
+        "ref/netstandard1.2/System.Threading.Timer.dll",
+        "ref/netstandard1.2/System.Threading.Timer.xml",
+        "ref/netstandard1.2/de/System.Threading.Timer.xml",
+        "ref/netstandard1.2/es/System.Threading.Timer.xml",
+        "ref/netstandard1.2/fr/System.Threading.Timer.xml",
+        "ref/netstandard1.2/it/System.Threading.Timer.xml",
+        "ref/netstandard1.2/ja/System.Threading.Timer.xml",
+        "ref/netstandard1.2/ko/System.Threading.Timer.xml",
+        "ref/netstandard1.2/ru/System.Threading.Timer.xml",
+        "ref/netstandard1.2/zh-hans/System.Threading.Timer.xml",
+        "ref/netstandard1.2/zh-hant/System.Threading.Timer.xml",
+        "ref/portable-net451+win81+wpa81/_._",
+        "ref/win81/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.threading.timer.4.0.1.nupkg.sha512",
+        "system.threading.timer.nuspec"
+      ]
+    },
+    "System.ValueTuple/4.5.0": {
+      "sha512": "xZtSZNEHGa+tGsKuP4sh257vxJ/yemShz4EusmomkynMzuEDDjVaErBNewpzEF6swUgbcrSQAX3ELsEp1zCOwA==",
+      "type": "package",
+      "path": "system.valuetuple/4.5.0",
+      "files": [
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.ValueTuple.dll",
+        "lib/net461/System.ValueTuple.xml",
+        "lib/net47/System.ValueTuple.dll",
+        "lib/net47/System.ValueTuple.xml",
+        "lib/netcoreapp2.0/_._",
         "lib/netstandard1.0/System.ValueTuple.dll",
-        "lib/portable-net40+sl4+win8+wp8/.xml",
+        "lib/netstandard1.0/System.ValueTuple.xml",
+        "lib/netstandard2.0/_._",
         "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "system.valuetuple.4.3.0.nupkg.sha512",
-        "system.valuetuple.nuspec"
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.ValueTuple.dll",
+        "ref/net47/System.ValueTuple.dll",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard2.0/_._",
+        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.valuetuple.4.5.0.nupkg.sha512",
+        "system.valuetuple.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Xml.ReaderWriter/4.3.0": {
@@ -12525,10 +13016,15 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "CQRS >= 1.0.0",
+      "FluentValidation.AspNetCore >= 8.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
-      "NSwag.AspNetCore >= 11.18.7",
-      "Operations >= 1.0.0"
+      "Operations >= 1.0.0",
+      "Serilog >= 2.7.1",
+      "Serilog.Extensions.Logging >= 2.0.2",
+      "Serilog.Settings.Configuration >= 2.6.1",
+      "Serilog.Sinks.ElasticSearch >= 6.5.0",
+      "Swashbuckle.AspNetCore >= 3.0.0"
     ]
   },
   "packageFolders": {
@@ -12580,6 +13076,10 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "FluentValidation.AspNetCore": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
@@ -12591,9 +13091,25 @@
             "version": "[2.1.0, )",
             "autoReferenced": true
           },
-          "NSwag.AspNetCore": {
+          "Serilog": {
             "target": "Package",
-            "version": "[11.18.7, )"
+            "version": "[2.7.1, )"
+          },
+          "Serilog.Extensions.Logging": {
+            "target": "Package",
+            "version": "[2.0.2, )"
+          },
+          "Serilog.Settings.Configuration": {
+            "target": "Package",
+            "version": "[2.6.1, )"
+          },
+          "Serilog.Sinks.ElasticSearch": {
+            "target": "Package",
+            "version": "[6.5.0, )"
+          },
+          "Swashbuckle.AspNetCore": {
+            "target": "Package",
+            "version": "[3.0.0, )"
           }
         },
         "imports": [

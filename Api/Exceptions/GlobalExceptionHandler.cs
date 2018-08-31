@@ -1,12 +1,10 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using CQRS.Block;
 using Incoding.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Newtonsoft.Json;
+using Serilog;
 
 namespace PogaWebApi.Exceptions
 {
@@ -23,11 +21,13 @@ namespace PogaWebApi.Exceptions
 
                     var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
                     if (contextFeature != null)
-                        if (contextFeature.Error is InvalidParametersException exc)
+                        if (contextFeature.Error is ValidationException exc)
                         {
                             context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
                             await context.Response.WriteAsync(new { error = exc.Message }.ToJsonString());
                         }
+                        else
+                            Log.Logger.Error(contextFeature.Error,contextFeature.Error.Message);
                 });
             });
         }

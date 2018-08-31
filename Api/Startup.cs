@@ -1,32 +1,26 @@
 ﻿using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using CQRS.Block.Http;
+using FluentValidation.AspNetCore;
 using Incoding.CQRS;
 using Incoding.Data;
-using Incoding.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
-using Incoding.CQRS;
-using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using NJsonSchema;
-using NSwag.AspNetCore;
 using Operations.Entities;
-using Operations.Queries;
 using PogaWebApi.Exceptions;
-using Raven.Abstractions.Extensions;
-using Raven.Imports.Newtonsoft.Json;
-
+using Serilog;
+using Serilog.Sinks.Elasticsearch;
+using Swashbuckle.AspNetCore.Swagger;
 namespace PogaWebApi
 {
     public class Startup
@@ -34,6 +28,16 @@ namespace PogaWebApi
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            var elasticUri = Configuration["ElasticConfiguration:Uri"];
+            Log.Logger = new LoggerConfiguration()
+                .ReadFrom.ConfigurationSection(Configuration.GetSection("Logging"))
+                .Enrich.FromLogContext()
+                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(elasticUri))
+                {
+                    AutoRegisterTemplate = true
+                })
+                .CreateLogger();
         }
 
         public IConfiguration Configuration { get; }
@@ -41,15 +45,49 @@ namespace PogaWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddMvc();
+                .AddMvc()
+                //.AddFluentValidation(fvc => fvc.RegisterValidatorsFromAssemblyContaining<User>())
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Title = "POGA internal API description",
+                    Version = "v1"
+                });
+
+                var security = new Dictionary<string, IEnumerable<string>>
+                                {
+                                    {"Bearer", new string[] { }}
+                                };
+
+                c.AddSecurityDefinition("Bearer", new ApiKeyScheme
+                {
+                    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+                    Name = "Authorization",
+                    In = "header",
+                    Type = "apiKey"
+                });
+                c.AddSecurityRequirement(security);
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.XML";
+                c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFile));
+                c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Operations.XML"));
+            });
+
             services.AddSingleton(_ => Configuration);
+
             services.AddScoped<DbContext>(optionsAction => new BaseDbContext<User>(builder => builder.UseSqlServer(Configuration["ConnectionString"])));
             services.AddScoped<IEntityFrameworkSessionFactory, EntityFrameworkSessionFactory>();
             services.AddScoped<IUnitOfWorkFactory, EntityFrameworkUnitOfWorkFactory>();
             services.AddTransient<IDispatcher, DefaultDispatcher>();
 
-            var key = Guid.NewGuid().ToString();
+
+            var key = "{67F5EE43-4A96-4A87-8B0F-590454CEC020}";
+            //var key = Guid.NewGuid().ToString();
             Configuration["jwt_secret"] = key;
+
             services.AddAuthentication(x =>
                 {
                     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -61,12 +99,11 @@ namespace PogaWebApi
                     {
                         OnTokenValidated = context =>
                         {
-                            var dispatcher = context.HttpContext.RequestServices.GetRequiredService<IDispatcher>();
-                            var userId = int.Parse(context.Principal.Identity.Name);
-                            var user = dispatcher.Query(new GetUserByIdQuery { Id = userId });
-                            if (user == null)
-                                context.Fail("Unauthorized");
-
+                            //var dispatcher = context.HttpContext.RequestServices.GetRequiredService<IDispatcher>();
+                            //var userId = int.Parse(context.Principal.Identity.Name);
+                            //var user = dispatcher.Query(new GetUserByIdQuery { CurrentUserId = userId });
+                            //if (user == null)
+                            //    context.Fail("Unauthorized");
                             return Task.CompletedTask;
                         }
                     };
@@ -82,8 +119,10 @@ namespace PogaWebApi
                 });
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddSerilog();
+
             app.ConfigureExceptionHandler();
 
             if (!env.IsDevelopment())
@@ -92,59 +131,18 @@ namespace PogaWebApi
             app.UseAuthentication();
             app.UseHttpsRedirection();
 
-            //            app.UseMvc(routes =>
-            //            {
-            //                routes.MapRoute(
-            //                    name: "default",
-            //                    template: "{controller=Home}/{action=Index}/{id?}");
-            //            });
-
-            var commands = typeof(User).Assembly
-                .GetTypes()
-                .Where(r => r.IsImplement(typeof(MessageBase)) && !r.IsInterface && !r.IsAbstract);
-
-
-
-            var routeBuilder = new RouteBuilder(app);
-
-            commands.Where(r => r.HasAttribute<HttpVerbAttribute>())
-                .ForEach(r =>
-            {
-                var attr = r.GetCustomAttribute<HttpVerbAttribute>();
-                if (attr is GetAttribute)
-                    routeBuilder.MapGet(attr.Url, context =>
+            app.UseMvc(routes =>
                     {
-                        var queryBase = Activator.CreateInstance(r) as IMessage;
-                        var jsonString = context.RequestServices.GetService<IDispatcher>()
-                            .Query(queryBase)
-                            .ToJsonString();
-                        return context.Response.WriteAsync(jsonString);
-                    });
+                        routes.MapRoute(
+                            name: "default",
+                            template: "{controller=Home}/{action=Index}/{id?}");
+                    })
+               .UseSwagger();
 
-                else if (attr is PostAttribute)
-                    routeBuilder.MapPost(attr.Url, context =>
-                    {
-                        var value = Encoding.UTF8.GetString(context.Request.Body.ReadData());
-                        var data = JsonConvert.DeserializeObject(value, r);
-                        var jsonString = context.RequestServices.GetService<IDispatcher>()
-                            .Query(data as IMessage)
-                            .ToJsonString();
-                        return context.Response.WriteAsync(jsonString);
-                    });
-            });
-
-            app.UseRouter(routeBuilder.Build());
-
-            app.UseSwaggerUi(typeof(Startup).GetTypeInfo().Assembly, settings =>
-            {
-                settings.GeneratorSettings.DefaultPropertyNameHandling =
-                    PropertyNameHandling.CamelCase;
-            });
-        }
-
-        private async Task Handler(HttpContext context)
-        {
-            await context.Response.WriteAsync("Hello");
+            app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "POGA internal API description");
+                });
         }
     }
 }

@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Security.Claims;
-using System.Text;
-using Incoding.CQRS;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
-using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using System.Text;
 using CQRS.Block;
+using Incoding.CQRS;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.IdentityModel.Tokens;
 using Operations.Entities;
 
-
-namespace Operations.Queries
+namespace Operations.Queries.Account
 {
     public class SignInQuery : QueryBase<Object>
     {
@@ -23,7 +22,7 @@ namespace Operations.Queries
                 .FirstOrDefault();
 
             if (user == null)
-                throw new InvalidParametersException( "Username or password is incorrect" );
+                throw new ValidationException( "Username or password is incorrect" );
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(Config["jwt_secret"]);
