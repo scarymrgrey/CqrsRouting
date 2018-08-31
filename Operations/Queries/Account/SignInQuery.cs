@@ -22,7 +22,7 @@ namespace Operations.Queries.Account
                 .FirstOrDefault();
 
             if (user == null)
-                throw new ValidationException( "Username or password is incorrect" );
+                throw new CQRSValidationException( "Username or password is incorrect" );
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(Config["jwt_secret"]);

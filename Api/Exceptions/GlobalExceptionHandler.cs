@@ -21,13 +21,19 @@ namespace PogaWebApi.Exceptions
 
                     var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
                     if (contextFeature != null)
-                        if (contextFeature.Error is ValidationException exc)
+                        if (contextFeature.Error is CQRSValidationException exc)
                         {
                             context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                            await context.Response.WriteAsync(new { error = exc.Message }.ToJsonString());
+                            context.Response.ContentType = "application/json";
+
+                            if (!exc.IsJson)
+                                await context.Response.WriteAsync(new { error = exc.Message }.ToJsonString());
+                            else
+                                await context.Response.WriteAsync(exc.Message);
+                               
                         }
                         else
-                            Log.Logger.Error(contextFeature.Error,contextFeature.Error.Message);
+                            Log.Logger.Error(contextFeature.Error, contextFeature.Error.Message);
                 });
             });
         }

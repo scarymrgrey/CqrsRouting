@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CQRS.Block;
 using Incoding.CQRS;
 using Newtonsoft.Json;
 using Operations.Entities;
 namespace Operations.Queries.Client
 {
-    public class CreateClientCommand : CommandBase
+    public class RegisterClientStep1Command : CommandBase
     {
         public string FirstName { get; set; }
 

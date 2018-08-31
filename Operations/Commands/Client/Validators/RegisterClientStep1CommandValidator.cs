@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Operations.Queries.Client.Validators
 {
-    public class CreateClientCommandValidator : AbstractValidator<CreateClientCommand>
+    public class RegisterClientStep1CommandValidator : AbstractValidator<RegisterClientStep1Command>
     {
-        public CreateClientCommandValidator(DbContext context)
+        public RegisterClientStep1CommandValidator(DbContext context)
         {
             RuleFor(r => r.Phone).NotEmpty();
             RuleFor(r => r.Email).NotEmpty();

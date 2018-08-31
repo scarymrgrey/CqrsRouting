@@ -46,7 +46,7 @@ namespace PogaWebApi
         {
             services
                 .AddMvc()
-                //.AddFluentValidation(fvc => fvc.RegisterValidatorsFromAssemblyContaining<User>())
+                .AddFluentValidation(fvc => fvc.RegisterValidatorsFromAssemblyContaining<User>())
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddSwaggerGen(c =>
